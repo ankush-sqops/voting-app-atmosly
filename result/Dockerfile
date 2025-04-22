@@ -16,6 +16,7 @@ COPY result/result/package*.json ./
 
 RUN npm ci && \
  npm cache clean --force && \
+ rm -rf /node_modules && \
  mv /usr/local/app/node_modules /node_modules
 
 COPY result/result .
